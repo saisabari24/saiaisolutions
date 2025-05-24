@@ -9,7 +9,11 @@ import { GradientText } from "@/components/ui/gradient-text";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import { HeroSection } from "@/components/ui/hero-section-dark";
-import { MessageSquare, Phone, Code, Building2, ChevronRight, Home as HomeIcon, Briefcase, FileText, Users, Mail } from "lucide-react";
+import { PremiumStats } from "@/components/ui/premium-stats";
+import { CaseStudies } from "@/components/ui/case-studies";
+import { SecurityCompliance } from "@/components/ui/security-compliance";
+import { ROICalculator } from "@/components/ui/roi-calculator";
+import { MessageSquare, Phone, Code, Building2, ChevronRight, Home as HomeIcon, Briefcase, FileText, Users, Mail, TrendingUp, Clock, DollarSign, Zap } from "lucide-react";
 import Image from "next/image";
 
 const navItems = [
@@ -18,6 +22,115 @@ const navItems = [
   { name: "Case Studies", link: "#case-studies", icon: <FileText size={20} /> },
   { name: "About", link: "#about", icon: <Users size={20} /> },
   { name: "Contact", link: "#contact", icon: <Mail size={20} /> },
+];
+
+// Premium enterprise stats data
+const enterpriseStats = [
+  {
+    value: "500M+",
+    label: "API Calls Processed",
+    description: "Monthly AI interactions across our enterprise client base",
+    animatedValue: 500,
+    suffix: "M+"
+  },
+  {
+    value: "99.9%",
+    label: "Uptime Guarantee",
+    description: "Enterprise-grade reliability with 24/7 monitoring",
+    animatedValue: 99.9,
+    suffix: "%"
+  },
+  {
+    value: "45%",
+    label: "Average Cost Reduction",
+    description: "Operational savings achieved by our Fortune 500 clients",
+    animatedValue: 45,
+    suffix: "%"
+  },
+  {
+    value: "72h",
+    label: "Implementation Time",
+    description: "Average deployment time for enterprise AI solutions",
+    animatedValue: 72,
+    suffix: "h"
+  }
+];
+
+// Premium case studies data
+const caseStudiesData = [
+  {
+    id: "fintech-leader",
+    client: {
+      name: "Global FinTech Leader",
+      industry: "Financial Services",
+      size: "50,000+ employees"
+    },
+    challenge: "Manual customer service operations were overwhelming their support team with 100,000+ monthly inquiries, leading to 48-hour response times and declining customer satisfaction scores.",
+    solution: "Implemented our enterprise AI customer service platform with natural language processing, sentiment analysis, and seamless human handoff capabilities across 12 languages.",
+    results: [
+      {
+        metric: "Response Time Reduction",
+        value: "94%",
+        description: "From 48 hours to 3 minutes average",
+        icon: <Clock className="w-5 h-5" />
+      },
+      {
+        metric: "Cost Savings",
+        value: "$2.4M",
+        description: "Annual operational cost reduction",
+        icon: <DollarSign className="w-5 h-5" />
+      },
+      {
+        metric: "Customer Satisfaction",
+        value: "+67%",
+        description: "CSAT score improvement",
+        icon: <TrendingUp className="w-5 h-5" />
+      }
+    ],
+    testimonial: {
+      quote: "SAI AI Solutions transformed our customer service operations beyond our expectations. The AI agents handle complex financial queries with remarkable accuracy, and our customers love the instant responses.",
+      author: "Sarah Chen",
+      position: "Chief Technology Officer"
+    },
+    tags: ["Customer Service AI", "NLP", "Multi-language", "Enterprise Scale"],
+    featured: true
+  },
+  {
+    id: "healthcare-network",
+    client: {
+      name: "Healthcare Network",
+      industry: "Healthcare",
+      size: "25,000+ employees"
+    },
+    challenge: "Appointment scheduling and patient inquiries were consuming 60% of staff time, creating bottlenecks and reducing time available for patient care.",
+    solution: "Deployed HIPAA-compliant AI voice agents for appointment scheduling, prescription refills, and general inquiries with seamless EHR integration.",
+    results: [
+      {
+        metric: "Staff Time Saved",
+        value: "60%",
+        description: "More time for patient care",
+        icon: <Clock className="w-5 h-5" />
+      },
+      {
+        metric: "Appointment Efficiency",
+        value: "+85%",
+        description: "Faster scheduling process",
+        icon: <Zap className="w-5 h-5" />
+      },
+      {
+        metric: "Patient Satisfaction",
+        value: "+52%",
+        description: "Improved patient experience",
+        icon: <TrendingUp className="w-5 h-5" />
+      }
+    ],
+    testimonial: {
+      quote: "The AI voice agents have revolutionized our patient interactions. They handle routine tasks flawlessly while maintaining the personal touch our patients expect.",
+      author: "Dr. Michael Rodriguez",
+      position: "Chief Medical Officer"
+    },
+    tags: ["Voice AI", "HIPAA Compliant", "EHR Integration", "Healthcare"]
+  }
 ];
 
 export default function Home() {
@@ -46,14 +159,14 @@ export default function Home() {
 
         {/* Hero Section */}
         <HeroSection
-          title="AI Solutions for Modern Business"
+          title="Enterprise AI Solutions for Fortune 500 Companies"
           subtitle={{
-            regular: "Transform your ideas into ",
-            gradient: "intelligent digital experiences",
+            regular: "Transform your business operations with ",
+            gradient: "intelligent AI systems",
           }}
-          description="Leverage cutting-edge AI technology to revolutionize your business operations with our suite of intelligent voice agents, chatbots, and custom web applications."
-          ctaText="Explore Solutions"
-          ctaHref="#services"
+          description="Deploy enterprise-grade AI solutions that deliver measurable ROI. Trusted by Fortune 500 companies to automate operations, enhance customer experience, and drive growth at scale."
+          ctaText="Schedule Enterprise Demo"
+          ctaHref="#contact"
           gridOptions={{
             angle: 65,
             opacity: 0.4,
@@ -68,6 +181,9 @@ export default function Home() {
           <Demo />
         </div>
 
+        {/* Premium Enterprise Stats */}
+        <PremiumStats stats={enterpriseStats} />
+
         {/* Services Section */}
         <section id="services" className="relative py-32">
           {/* Background gradient */}
@@ -76,11 +192,12 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
               <GradientText
-                text="Our Intelligent Services"
+                text="Enterprise AI Solutions"
                 preset="slide"
+                highlightWords={["Enterprise", "AI"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Transform your business with cutting-edge AI solutions designed for the modern enterprise
+                Scalable AI solutions designed for enterprise environments with bank-level security and 99.9% uptime guarantee
               </p>
             </div>
             
@@ -88,44 +205,56 @@ export default function Home() {
               {/* Service Card 1 */}
               <ServiceCard
                 icon={<MessageSquare className="h-8 w-8" />}
-                title="Customer Service AI"
-                description="Intelligent chat & voice agents that handle customer inquiries with human-like understanding and efficiency."
+                title="AI Customer Service Platform"
+                description="Enterprise-grade conversational AI with multi-language support, sentiment analysis, and seamless human handoff capabilities."
               />
               
               {/* Service Card 2 */}
               <ServiceCard
                 icon={<Phone className="h-8 w-8" />}
-                title="Outbound Calling Agents"
-                description="AI voice agents that conduct calls for sales, appointments, and follow-ups with natural conversation flow."
+                title="Intelligent Voice Agents"
+                description="HIPAA-compliant voice AI for appointment scheduling, lead qualification, and customer support with natural conversation flow."
               />
               
               {/* Service Card 3 */}
               <ServiceCard
                 icon={<Code className="h-8 w-8" />}
-                title="AI-Driven Web Apps"
-                description="Custom web applications enhanced with AI capabilities for improved user experience and business outcomes."
+                title="Custom AI Applications"
+                description="Bespoke AI-powered web applications with advanced analytics, predictive modeling, and enterprise system integration."
               />
               
               {/* Service Card 4 */}
               <ServiceCard
                 icon={<Building2 className="h-8 w-8" />}
                 title="Enterprise AI Integration"
-                description="Seamless integration of AI solutions into your existing business systems and workflows."
+                description="Seamless integration with existing enterprise systems including CRM, ERP, and data warehouses with zero downtime deployment."
               />
             </div>
           </div>
         </section>
+
+        {/* ROI Calculator */}
+        <ROICalculator />
+
+        {/* Case Studies Section */}
+        <section id="case-studies">
+          <CaseStudies studies={caseStudiesData} />
+        </section>
+
+        {/* Security & Compliance */}
+        <SecurityCompliance />
 
         {/* How We Work Section */}
         <section id="process" className="relative py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
               <GradientText
-                text="How We Work"
+                text="Enterprise Implementation Process"
                 preset="slide"
+                highlightWords={["Enterprise", "Implementation"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Our proven methodology ensures successful AI implementation from concept to deployment
+                Our proven enterprise methodology ensures successful AI deployment with minimal disruption to your operations
               </p>
             </div>
             
@@ -133,44 +262,47 @@ export default function Home() {
               <Accordion>
                 <AccordionItem
                   value="step-1"
-                  title="Discovery & Strategy"
+                  title="Enterprise Assessment & Strategy"
                 >
-                  We begin with a thorough analysis of your business needs, goals, and challenges. 
-                  Our team works with you to develop a strategic roadmap that outlines how AI can 
-                  drive value for your organization.
+                  We conduct a comprehensive analysis of your enterprise infrastructure, security requirements, 
+                  and business objectives. Our team works with your stakeholders to develop a strategic AI roadmap 
+                  that aligns with your digital transformation goals and compliance requirements.
                 </AccordionItem>
                 
                 <AccordionItem
                   value="step-2"
-                  title="Design & Prototyping"
+                  title="Security-First Design & Architecture"
                 >
-                  Our design team creates intuitive, user-centered interfaces and experiences. 
-                  We develop functional prototypes to test concepts and gather feedback before 
-                  moving to full development.
+                  Our enterprise architects design solutions with security, scalability, and compliance at the core. 
+                  We create detailed technical specifications, security protocols, and integration plans that meet 
+                  your enterprise standards and regulatory requirements.
                 </AccordionItem>
                 
                 <AccordionItem
                   value="step-3"
-                  title="Development & Integration"
+                  title="Agile Development & Testing"
                 >
-                  Our engineers build robust, scalable solutions using cutting-edge AI technologies. 
-                  We ensure seamless integration with your existing systems and workflows.
+                  Using enterprise-grade development practices, we build and rigorously test your AI solution. 
+                  Our process includes security audits, performance testing, and compliance validation to ensure 
+                  enterprise readiness before deployment.
                 </AccordionItem>
                 
                 <AccordionItem
                   value="step-4"
-                  title="Testing & Optimization"
+                  title="Zero-Downtime Deployment"
                 >
-                  We rigorously test all aspects of your solution to ensure performance, security, 
-                  and reliability. Continuous optimization ensures your AI solution improves over time.
+                  We deploy your AI solution using blue-green deployment strategies to ensure zero downtime. 
+                  Our deployment process includes real-time monitoring, rollback capabilities, and comprehensive 
+                  testing to guarantee smooth operations.
                 </AccordionItem>
                 
                 <AccordionItem
                   value="step-5"
-                  title="Launch & Support"
+                  title="Enterprise Support & Optimization"
                 >
-                  We provide comprehensive support during launch and beyond. Our team is available 
-                  for ongoing maintenance, updates, and enhancements to your AI solution.
+                  Post-deployment, we provide 24/7 enterprise support with dedicated account management. 
+                  Our team continuously monitors performance, provides regular optimization updates, and ensures 
+                  your AI solution evolves with your business needs.
                 </AccordionItem>
               </Accordion>
             </div>
@@ -185,109 +317,99 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
               <GradientText
-                text="The Impact We Deliver"
+                text="Enterprise Impact Metrics"
                 preset="slide"
+                highlightWords={["Enterprise", "Impact"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Real results that drive business growth and operational excellence
+                Measurable business outcomes that drive enterprise value and competitive advantage
               </p>
             </div>
             
             <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
               <MetricCard
-                value="150+"
-                label="Successful Projects"
-                description="Delivering transformative AI solutions across industries."
+                value="$50M+"
+                label="Client Cost Savings"
+                description="Total operational cost savings achieved across our enterprise client portfolio in the last 12 months"
               />
               
               <MetricCard
-                value="85%"
-                label="Time Saved"
-                description="Average efficiency improvement for our clients' operations."
+                value="300%"
+                label="Average ROI"
+                description="Return on investment achieved by enterprise clients within the first year of AI implementation"
               />
               
               <MetricCard
-                value="4.2x"
-                label="ROI"
-                description="Average return on investment within the first year."
+                value="24/7"
+                label="Enterprise Support"
+                description="Round-the-clock monitoring and support with 99.9% uptime SLA and dedicated account management"
               />
             </div>
           </div>
         </section>
 
-        {/* Call to Action Section */}
-        <section className="relative py-32">
+        {/* CTA Section */}
+        <section id="contact" className="relative py-32">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
               <GradientText
-                text="Ready to Transform Your Business with AI?"
+                text="Ready to Transform Your Enterprise with AI?"
                 preset="scale"
+                highlightWords={["Transform", "Enterprise", "AI"]}
               />
               
               <TextEffect
-                text="Join the companies leveraging our AI solutions to drive efficiency, growth, and innovation."
+                text="Join Fortune 500 companies leveraging our enterprise AI solutions to drive efficiency, growth, and innovation at scale."
                 preset="fade"
                 className="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
                 delay={0.05}
               />
               
-              <div className="mt-12">
-                <Button variant="cta" size="lg" href="#services" className="transform hover:scale-105 transition-transform duration-200">
-                  Transform Your Business
-                  <ChevronRight className="ml-2 h-5 w-5" />
+              <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+                <Button variant="cta" size="lg" href="#contact">
+                  Schedule Enterprise Demo
+                  <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
+                
+                <Button variant="outline" size="lg" href="#case-studies">
+                  View Case Studies
+                </Button>
+              </div>
+              
+              <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+                <p>✓ SOC 2 Type II Certified  ✓ GDPR Compliant  ✓ 99.9% Uptime SLA</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="relative border-t border-white/10 dark:border-white/5 bg-gradient-to-b from-transparent to-gray-50/50 dark:to-gray-950/50 py-20">
+        <footer className="relative py-20 border-t border-gray-200 dark:border-gray-800">
           <div className="container mx-auto px-4">
-            <div className="grid gap-12 md:grid-cols-4">
-              <div className="md:col-span-1">
-                <div className="flex items-center mb-6">
-                  <Image src="/logo.png" alt="SAI AI Solutions" width={64} height={45} className="mr-3" />
-                  <span className="heading-xs text-gray-900 dark:text-white">SAI AI Solutions</span>
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">S</span>
+                  </div>
+                  <span className="text-2xl font-bold text-gray-900 dark:text-white font-geist">
+                    SAI AI Solutions
+                  </span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm">
-                  Intelligent digital products and AI solutions for the modern business. Transform your operations with cutting-edge technology.
-                </p>
               </div>
               
-              <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Services</h4>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Customer Service AI</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Outbound Calling Agents</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">AI-Driven Web Apps</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Enterprise AI Integration</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Company</h4>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">About Us</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Case Studies</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Blog</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Careers</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Contact</h4>
-                <ul className="space-y-3">
-                  <li className="text-gray-600 dark:text-gray-300">hello@saiaisolutions.com</li>
-                  <li className="text-gray-600 dark:text-gray-300">+1 (888) 123-4567</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="mt-16 pt-8 border-t border-white/10 dark:border-white/5 text-center">
-              <p className="text-gray-600 dark:text-gray-300">
-                © {new Date().getFullYear()} Sai AI Solutions. All rights reserved.
+              <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Enterprise AI solutions that deliver measurable results. Trusted by Fortune 500 companies 
+                to transform operations and drive growth through intelligent automation.
               </p>
+              
+              <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
+                <span>© 2024 SAI AI Solutions</span>
+                <span>•</span>
+                <span>Enterprise AI Solutions</span>
+                <span>•</span>
+                <span>SOC 2 Type II Certified</span>
+              </div>
             </div>
           </div>
         </footer>
