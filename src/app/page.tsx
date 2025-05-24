@@ -78,6 +78,7 @@ export default function Home() {
               <GradientText
                 text="Our Intelligent Services"
                 preset="slide"
+                highlightWords={["Intelligent"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Transform your business with cutting-edge AI solutions designed for the modern enterprise
@@ -123,6 +124,7 @@ export default function Home() {
               <GradientText
                 text="How We Work"
                 preset="slide"
+                highlightWords={["Work"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Our proven methodology ensures successful AI implementation from concept to deployment
@@ -187,6 +189,7 @@ export default function Home() {
               <GradientText
                 text="The Impact We Deliver"
                 preset="slide"
+                highlightWords={["Impact"]}
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Real results that drive business growth and operational excellence
@@ -222,6 +225,7 @@ export default function Home() {
               <GradientText
                 text="Ready to Transform Your Business with AI?"
                 preset="scale"
+                highlightWords={["Transform", "AI"]}
               />
               
               <TextEffect
