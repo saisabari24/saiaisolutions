@@ -5,6 +5,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { Demo } from "@/components/ui/demo";
 import { TextEffect } from "@/components/ui/text-effect";
+import { GradientText } from "@/components/ui/gradient-text";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import { HeroSection } from "@/components/ui/hero-section-dark";
@@ -74,10 +75,9 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <TextEffect
+              <GradientText
                 text="Our Intelligent Services"
                 preset="slide"
-                className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Transform your business with cutting-edge AI solutions designed for the modern enterprise
@@ -120,10 +120,9 @@ export default function Home() {
         <section id="process" className="relative py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
-              <TextEffect
+              <GradientText
                 text="How We Work"
                 preset="slide"
-                className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Our proven methodology ensures successful AI implementation from concept to deployment
@@ -185,10 +184,9 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <TextEffect
+              <GradientText
                 text="The Impact We Deliver"
                 preset="slide"
-                className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
               />
               <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Real results that drive business growth and operational excellence
@@ -221,10 +219,9 @@ export default function Home() {
         <section className="relative py-32">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
-              <TextEffect
+              <GradientText
                 text="Ready to Transform Your Business with AI?"
                 preset="scale"
-                className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
               />
               
               <TextEffect
@@ -251,7 +248,7 @@ export default function Home() {
               <div className="md:col-span-1">
                 <div className="flex items-center mb-6">
                   <Image src="/logo.png" alt="SAI AI Solutions" width={64} height={45} className="mr-3" />
-                  <span className="text-xl font-bold text-gray-900 dark:text-white">SAI AI Solutions</span>
+                  <span className="heading-xs text-gray-900 dark:text-white">SAI AI Solutions</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm">
                   Intelligent digital products and AI solutions for the modern business. Transform your operations with cutting-edge technology.
@@ -259,7 +256,7 @@ export default function Home() {
               </div>
               
               <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Services</h4>
+                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Services</h4>
                 <ul className="space-y-3">
                   <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Customer Service AI</a></li>
                   <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Outbound Calling Agents</a></li>
@@ -269,7 +266,7 @@ export default function Home() {
               </div>
               
               <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Company</h4>
+                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Company</h4>
                 <ul className="space-y-3">
                   <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">About Us</a></li>
                   <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Case Studies</a></li>
@@ -279,7 +276,7 @@ export default function Home() {
               </div>
               
               <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Contact</h4>
+                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Contact</h4>
                 <ul className="space-y-3">
                   <li className="text-gray-600 dark:text-gray-300">hello@saiaisolutions.com</li>
                   <li className="text-gray-600 dark:text-gray-300">+1 (888) 123-4567</li>
@@ -320,7 +317,7 @@ function ServiceCard({
             {icon}
           </div>
           
-          <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+          <h3 className="heading-sm text-gray-900 dark:text-white mb-4">{title}</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{description}</p>
           
           <div className="mt-auto">
@@ -351,10 +348,10 @@ function MetricCard({
       <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
         <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-30" />
         <div className="relative h-full w-full rounded-2xl bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-white/10 p-8 text-center transition-all duration-300 group-hover:shadow-2xl">
-          <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent mb-3">
+          <div className="text-5xl font-bold text-gradient-purple mb-3 font-heading">
             {value}
           </div>
-          <div className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{label}</div>
+          <div className="heading-xs text-gray-900 dark:text-white mb-3">{label}</div>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
         </div>
       </div>

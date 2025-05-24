@@ -69,7 +69,7 @@ export const FloatingNav = ({
             {/* Logo */}
             <Link href="/" className="flex items-center mr-6">
               <Image src="/logo.png" alt="SAI AI Solutions" width={48} height={34} className="mr-2" />
-              <span className="hidden sm:block text-sm font-semibold text-gray-900 dark:text-white">SAI AI</span>
+              <span className="hidden sm:block text-sm font-semibold text-gray-900 dark:text-white font-heading">SAI AI</span>
             </Link>
             
             {/* Navigation Items */}

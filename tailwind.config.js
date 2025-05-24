@@ -20,6 +20,7 @@ module.exports = {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
         geist: ['var(--font-geist-sans)'],
+        inter: ['var(--font-inter)'],
       },
       colors: {
         border: "hsl(var(--border))",
