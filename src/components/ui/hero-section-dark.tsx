@@ -74,13 +74,12 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   ) => {
     return (
       <div className={cn("relative", className)} ref={ref} {...props}>
-        <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
         <section className="relative max-w-full mx-auto z-1 h-full flex items-center">
           {/* <RetroGrid {...gridOptions} /> */}
                                 <div className="max-w-screen-xl z-10 mx-auto px-4 py-8 gap-12 md:px-8 w-full">
             <div className="space-y-4 md:space-y-6 max-w-5xl mx-auto text-center">
               {/* Top Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200/20 bg-purple-50/10 dark:bg-purple-950/20 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200/20 bg-gray-50/10 dark:bg-gray-950/20 backdrop-blur-sm">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-geist text-gray-700 dark:text-gray-300">Sai AI Solutions</span>
                 <ChevronRight className="w-3 h-3 text-gray-500" />
@@ -88,8 +87,6 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
               {/* Main Heading with Visual Impact */}
               <div className="relative">
-                {/* Background decoration */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-pink-600/10 blur-3xl"></div>
                 
                 <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-geist font-normal tracking-tight leading-[1.1] bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
                   Generate{" "}
@@ -112,8 +109,6 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-400">
                       guaranteed
                     </span>
-                    {/* Highlight effect */}
-                    <div className="absolute inset-0 bg-emerald-500/20 blur-lg rounded-lg -z-10"></div>
                   </span>
                 </h2>
               </div>

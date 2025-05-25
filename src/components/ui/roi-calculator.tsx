@@ -159,8 +159,7 @@ export function ROICalculator() {
           
           <div className="space-y-6">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-400/10 to-gray-600/10 rounded-xl blur-xl" />
-              <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+              <div className="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 rounded-xl p-6">
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">Current Monthly Revenue</div>
                 <div className="text-2xl font-bold text-gray-900 dark:text-white">
                   {formatCurrency(results.currentRevenue)}
@@ -169,8 +168,7 @@ export function ROICalculator() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-600/20 rounded-xl blur-xl" />
-              <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-green-200 dark:border-green-800 rounded-xl p-6">
+              <div className="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-green-200/50 dark:border-green-700/50 rounded-xl p-6">
                 <div className="text-sm text-green-600 dark:text-green-400 mb-2">Projected Monthly Revenue</div>
                 <div className="text-3xl font-bold text-green-600 dark:text-green-400">
                   {formatCurrency(results.projectedRevenue)}
@@ -182,8 +180,7 @@ export function ROICalculator() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-xl blur-xl" />
-              <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-purple-200 dark:border-purple-800 rounded-xl p-6">
+              <div className="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-purple-200/50 dark:border-purple-700/50 rounded-xl p-6">
                 <div className="text-sm text-purple-600 dark:text-purple-400 mb-2">Additional Monthly Revenue</div>
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">
                   {formatCurrency(results.additionalRevenue)}
@@ -192,8 +189,7 @@ export function ROICalculator() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-xl blur-xl" />
-              <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-blue-200 dark:border-blue-800 rounded-xl p-6">
+              <div className="relative bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-blue-200/50 dark:border-blue-700/50 rounded-xl p-6">
                 <div className="text-sm text-blue-600 dark:text-blue-400 mb-2 flex items-center">
                   <TrendingUp className="h-4 w-4 mr-1" />
                   Return on Investment
@@ -209,7 +205,7 @@ export function ROICalculator() {
           </div>
 
           {showResults && results.roi > 100 && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div className="mt-8 p-6 bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-xl border border-green-200/50 dark:border-green-700/50">
               <h5 className="font-semibold text-green-800 dark:text-green-300 mb-2">Excellent ROI Potential!</h5>
               <p className="text-sm text-green-700 dark:text-green-400">
                 Based on your metrics, our AI lead generation service could generate significant positive returns. 

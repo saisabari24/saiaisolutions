@@ -210,7 +210,7 @@ export function ContactForm() {
           />
         </div>
 
-        <div className="bg-purple-50/50 dark:bg-purple-950/50 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+        <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-xl p-6 border border-green-200/50 dark:border-green-700/50">
           <div className="flex items-start space-x-3">
             <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
             <div>

@@ -99,7 +99,6 @@ export default function Home() {
 
         {/* Guarantee Section */}
         <section id="guarantee" className="relative py-32">
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-50/40 via-pink-50/40 to-purple-50/40 dark:from-purple-950/30 dark:via-pink-950/30 dark:to-purple-950/30" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
@@ -115,7 +114,6 @@ export default function Home() {
               />
               
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-600/20 rounded-3xl blur-xl" />
                 <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-green-200 dark:border-green-800 rounded-3xl p-12">
                   <div className="text-6xl font-bold text-gradient-green mb-6 font-heading">
                     10+
@@ -161,7 +159,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto auto-rows-fr">
               <ServiceCard
                 icon={<Phone className="h-8 w-8" />}
                 title="AI Voice Agents"
@@ -195,7 +193,6 @@ export default function Home() {
 
         {/* Case Studies Preview */}
         <section id="case-studies" className="relative py-32">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/30 to-transparent dark:via-purple-950/20" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
@@ -209,7 +206,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto auto-rows-fr">
               <CaseStudyCard
                 industry="SaaS Company"
                 result="300% increase in qualified leads"
@@ -252,7 +249,7 @@ export default function Home() {
               />
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto auto-rows-fr">
               <TestimonialCard
                 quote="SAI's AI agents generated 15 qualified leads in the first month. Best ROI we've ever seen."
                 author="Sarah Johnson"
@@ -313,7 +310,6 @@ export default function Home() {
 
         {/* Call to Action Section */}
         <section className="relative py-32">
-          <div className="absolute inset-0 bg-gradient-to-b from-purple-50/40 via-pink-50/40 to-purple-50/40 dark:from-purple-950/30 dark:via-pink-950/30 dark:to-purple-950/30" />
           
           <div className="container mx-auto px-4 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
@@ -346,12 +342,10 @@ export default function Home() {
 
         {/* Contact Form Section */}
         <section id="contact" className="relative py-32">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/50 dark:from-gray-950/50 dark:to-black/50" />
           
           <div className="container mx-auto px-4 relative z-10">
             {/* Contact Form */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-3xl blur-3xl" />
               <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-white/20 dark:border-gray-800/20 rounded-3xl p-12">
                 <ContactForm />
               </div>
@@ -374,7 +368,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="relative border-t border-white/10 dark:border-white/5 bg-gradient-to-b from-transparent to-gray-50/50 dark:to-gray-950/50 py-20">
+        <footer className="relative border-t border-white/10 dark:border-white/5 py-20">
           <div className="container mx-auto px-4">
             <div className="grid gap-12 md:grid-cols-4">
               <div className="md:col-span-2">
@@ -443,28 +437,30 @@ function ServiceCard({
   features: string[];
 }) {
   return (
-    <div className="group relative">
-      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
-        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-        <div className="relative h-full w-full rounded-2xl bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-white/10 p-8 transition-all duration-300 group-hover:shadow-2xl">
+    <div className="group relative h-full">
+      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full h-full">
+        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+        <div className="relative h-full w-full rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 p-8 transition-all duration-500 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80 flex flex-col">
           <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-transparent dark:from-purple-400/20 dark:via-pink-400/20 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
             {icon}
           </div>
           
-          <h3 className="heading-sm text-gray-900 dark:text-white mb-4">{title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{description}</p>
+          <h3 className="heading-sm text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{description}</p>
           
-          <ul className="space-y-2 mb-6">
+          <ul className="space-y-3 mb-8">
             {features.map((feature, index) => (
               <li key={index} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                  <CheckCircle className="h-3 w-3 text-green-500" />
+                </div>
                 {feature}
               </li>
             ))}
           </ul>
           
           <div className="mt-auto">
-            <Button variant="cta" size="sm" href="#contact" className="group-hover:scale-105 transition-transform duration-200 w-full">
+            <Button variant="cta" size="sm" href="#contact" className="group-hover:scale-105 transition-transform duration-300 w-full shadow-lg">
               Get Started
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -488,14 +484,25 @@ function CaseStudyCard({
   description: string;
 }) {
   return (
-    <div className="group relative">
-      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
-        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-20" />
-        <div className="relative h-full w-full rounded-2xl bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-white/10 p-8 transition-all duration-300 group-hover:shadow-2xl">
-          <div className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-2">{industry}</div>
-          <div className="text-2xl font-bold text-gradient-purple mb-2 font-heading">{result}</div>
-          <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">{timeframe}</div>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+    <div className="group relative h-full">
+      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full h-full">
+        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-15 group-hover:opacity-30 transition-opacity duration-500" />
+        <div className="relative h-full w-full rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 p-8 transition-all duration-500 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80 flex flex-col">
+          <div className="mb-4">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/10 dark:bg-purple-400/20 border border-purple-200/30 dark:border-purple-400/30 mb-4">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">{industry}</span>
+            </div>
+            <div className="text-3xl font-bold text-gradient-purple mb-2 font-heading group-hover:scale-105 transition-transform duration-300">{result}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{timeframe}</div>
+          </div>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">{description}</p>
+          <div className="mt-6 pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
+            <div className="flex items-center text-sm text-purple-600 dark:text-purple-400 font-medium group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">
+              <ArrowRight className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+              View Full Case Study
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -515,21 +522,28 @@ function TestimonialCard({
   rating: number;
 }) {
   return (
-    <div className="group relative">
-      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
-        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
-        <div className="relative h-full w-full rounded-2xl bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-white/20 dark:border-white/10 p-8 transition-all duration-300 group-hover:shadow-2xl">
-          <div className="flex mb-4">
-            {[...Array(rating)].map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-            ))}
+    <div className="group relative h-full">
+      <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full h-full">
+        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-25 transition-opacity duration-500" />
+        <div className="relative h-full w-full rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 p-8 transition-all duration-500 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80 flex flex-col">
+          <div className="flex mb-6 justify-center">
+            <div className="flex space-x-1 p-2 bg-yellow-50/50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200/30 dark:border-yellow-700/30">
+              {[...Array(rating)].map((_, i) => (
+                <Star key={i} className="h-4 w-4 text-yellow-500 fill-current group-hover:scale-110 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }} />
+              ))}
+            </div>
           </div>
-          <blockquote className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic">
+          <blockquote className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed italic text-center flex-grow group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
             "{quote}"
           </blockquote>
-          <div>
-            <div className="font-semibold text-gray-900 dark:text-white">{author}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">{role}</div>
+          <div className="text-center pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
+            <div className="w-12 h-12 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 dark:from-purple-400/30 dark:to-pink-400/30 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-8 h-8 bg-gradient-to-tr from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                {author.split(' ').map(n => n[0]).join('')}
+              </div>
+            </div>
+            <div className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{author}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{role}</div>
           </div>
         </div>
       </div>

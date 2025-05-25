@@ -63,7 +63,7 @@ const packages = [
 export function PricingPackages() {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-8 auto-rows-fr">
         {packages.map((pkg, index) => (
           <div key={index} className={`relative ${pkg.popular ? 'lg:scale-105' : ''}`}>
             {pkg.popular && (
@@ -74,17 +74,17 @@ export function PricingPackages() {
               </div>
             )}
             
-            <div className="group relative">
-              <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
+            <div className="group relative h-full">
+              <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full h-full">
                 <div className={`absolute inset-[-1000%] animate-[spin_2s_linear_infinite] ${
                   pkg.popular 
-                    ? 'bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-60' 
-                    : 'bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-20 group-hover:opacity-40'
-                } transition-opacity duration-300`} />
-                <div className={`relative h-full w-full rounded-2xl backdrop-blur-xl border p-8 transition-all duration-300 ${
+                    ? 'bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-50' 
+                    : 'bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-15 group-hover:opacity-35'
+                } transition-opacity duration-500`} />
+                <div className={`relative h-full w-full rounded-2xl backdrop-blur-2xl border p-8 transition-all duration-500 flex flex-col ${
                   pkg.popular 
-                    ? 'bg-white/95 dark:bg-gray-900/95 border-purple-200 dark:border-purple-800 shadow-2xl' 
-                    : 'bg-white/90 dark:bg-gray-900/90 border-white/20 dark:border-gray-800/20 group-hover:shadow-2xl'
+                    ? 'bg-white/80 dark:bg-gray-900/80 border-purple-200/50 dark:border-purple-700/50 shadow-2xl' 
+                    : 'bg-white/60 dark:bg-gray-900/60 border-white/30 dark:border-gray-700/30 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80'
                 }`}>
                   
                   {/* Header */}
@@ -109,10 +109,12 @@ export function PricingPackages() {
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-4 mb-8 flex-grow">
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                          <CheckCircle className="h-3 w-3 text-green-500" />
+                        </div>
                         <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
                       </li>
                     ))}
@@ -148,7 +150,7 @@ export function PricingPackages() {
 
       {/* Additional Info */}
       <div className="mt-16 text-center">
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl p-8 border border-purple-200 dark:border-purple-800">
+        <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-white/30 dark:border-gray-700/30">
           <h4 className="heading-sm text-gray-900 dark:text-white mb-4">All Plans Include</h4>
           <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center justify-center space-x-2">
