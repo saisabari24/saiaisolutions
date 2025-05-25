@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { PremiumTextAnimation, PremiumSubtext } from "@/components/ui/premium-text-animation";
 import { Calculator, TrendingUp, DollarSign } from "lucide-react";
 
 export function ROICalculator() {
@@ -69,12 +70,23 @@ export function ROICalculator() {
         <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent text-green-600 dark:text-green-400">
           <Calculator className="h-8 w-8" />
         </div>
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-geist tracking-tighter bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] mb-4">
-          ROI Calculator
-        </h3>
-        <p className="text-base md:text-lg lg:text-xl font-geist text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <PremiumTextAnimation
+          text="ROI Calculator"
+          preset="fadeUp"
+          size="2xl"
+          highlightWords={["ROI"]}
+          staggerDelay={0.05}
+          duration={0.6}
+          className="mb-4"
+        />
+        <PremiumSubtext
+          preset="fadeUp"
+          delay={0.3}
+          staggerDelay={0.03}
+          className="max-w-2xl mx-auto text-base md:text-lg lg:text-xl"
+        >
           See how much additional revenue our AI lead generation service could generate for your business
-        </p>
+        </PremiumSubtext>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">

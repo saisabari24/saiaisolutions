@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { PremiumTextAnimation, PremiumSubtext } from "@/components/ui/premium-text-animation";
 import { CheckCircle, Send, Calendar, Phone, Mail, MessageSquare } from "lucide-react";
 
 export function ContactForm() {
@@ -38,12 +39,23 @@ export function ContactForm() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 mb-6">
           <CheckCircle className="h-8 w-8 text-white" />
         </div>
-                    <h3 className="text-2xl font-geist font-semibold tracking-tighter text-gray-900 dark:text-white mb-4">
-          Thank You!
-        </h3>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+                    <PremiumTextAnimation
+          text="Thank You!"
+          preset="fadeUp"
+          size="xl"
+          gradient={true}
+          staggerDelay={0.1}
+          duration={0.6}
+          className="mb-4"
+        />
+        <PremiumSubtext
+          preset="fadeUp"
+          delay={0.3}
+          staggerDelay={0.03}
+          className="mb-6 text-xl"
+        >
           We've received your request and will contact you within 24 hours to discuss your lead generation strategy.
-        </p>
+        </PremiumSubtext>
         <p className="text-gray-500 dark:text-gray-400">
           Check your email for a confirmation and next steps.
         </p>
@@ -54,12 +66,23 @@ export function ContactForm() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
-        <h3 className="text-3xl font-geist font-bold tracking-tighter text-gray-900 dark:text-white mb-4">
-          Book Your Strategy Call
-        </h3>
-        <p className="text-xl text-gray-600 dark:text-gray-300">
+        <PremiumTextAnimation
+          text="Book Your Strategy Call"
+          preset="fadeUp"
+          size="2xl"
+          highlightWords={["Strategy", "Call"]}
+          staggerDelay={0.05}
+          duration={0.6}
+          className="mb-4"
+        />
+        <PremiumSubtext
+          preset="fadeUp"
+          delay={0.3}
+          staggerDelay={0.03}
+          className="text-xl"
+        >
           Get a free consultation and discover how we can generate 10+ qualified leads for your business in 30 days.
-        </p>
+        </PremiumSubtext>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

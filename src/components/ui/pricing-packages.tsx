@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { PremiumTextAnimation } from "@/components/ui/premium-text-animation";
 import { CheckCircle, Star, Zap, Crown } from "lucide-react";
 
 const packages = [
@@ -97,7 +98,14 @@ export function PricingPackages() {
                       {pkg.icon}
                     </div>
                     
-                    <h3 className="text-xl font-geist font-semibold tracking-tighter text-gray-900 dark:text-white mb-2">{pkg.name}</h3>
+                    <PremiumTextAnimation
+                      text={pkg.name}
+                      preset="fadeUp"
+                      size="xl"
+                      staggerDelay={0.05}
+                      duration={0.5}
+                      className="mb-2"
+                    />
                     <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">{pkg.description}</p>
                     
                     <div className="mb-6">

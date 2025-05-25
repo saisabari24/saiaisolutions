@@ -4,8 +4,7 @@ import React from "react";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { Demo } from "@/components/ui/demo";
-import { TextEffect } from "@/components/ui/text-effect";
-import { GradientText } from "@/components/ui/gradient-text";
+import { PremiumTextAnimation, PremiumHeading, PremiumSubtext } from "@/components/ui/premium-text-animation";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import { HeroSection } from "@/components/ui/hero-section-dark";
@@ -105,12 +104,16 @@ export default function Home() {
                 <Shield className="h-8 w-8" />
               </div>
               
-              <GradientText
-                text="Our Iron-Clad Guarantee"
-                preset="scale"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["Iron-Clad", "Guarantee"]}
                 className="mb-8"
-              />
+                staggerDelay={0.05}
+                duration={0.6}
+              >
+                Our Iron-Clad Guarantee
+              </PremiumHeading>
               
               <div className="group relative">
                 <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
@@ -119,10 +122,10 @@ export default function Home() {
                     <div className="text-6xl sm:text-7xl font-geist font-normal tracking-tight text-gradient-green mb-6 group-hover:scale-105 transition-transform duration-300">
                       10+
                     </div>
-                                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-geist tracking-tighter text-gray-900 dark:text-white mb-6">
+                     <h3 className="text-4xl md:text-5xl lg:text-6xl font-geist tracking-tighter text-gray-900 dark:text-white mb-6">
                        Qualified Leads in 30 Days
                      </h3>
-                                         <p className="text-base md:text-lg lg:text-xl font-geist text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                     <p className="text-base md:text-lg lg:text-xl font-geist text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
                        If our AI agents don't deliver at least 10 qualified leads ready for your sales team within 30 days, we'll refund every penny. No questions asked.
                      </p>
                     
@@ -164,14 +167,24 @@ export default function Home() {
         <section id="services" className="relative py-32">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <GradientText
-                text="Lead Generation Arsenal"
-                preset="slide"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["Lead", "Generation"]}
-              />
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                staggerDelay={0.05}
+                duration={0.6}
+                className="mb-6"
+              >
+                Lead Generation Arsenal
+              </PremiumHeading>
+              <PremiumSubtext
+                preset="fadeUp"
+                delay={0.3}
+                staggerDelay={0.03}
+                className="max-w-3xl mx-auto"
+              >
                 Cutting-edge AI agents that work around the clock to fill your pipeline with qualified prospects
-              </p>
+              </PremiumSubtext>
             </div>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto auto-rows-fr">
@@ -211,14 +224,24 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <GradientText
-                text="Client Success Stories"
-                preset="slide"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["Success"]}
-              />
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                staggerDelay={0.05}
+                duration={0.6}
+                className="mb-6"
+              >
+                Client Success Stories
+              </PremiumHeading>
+              <PremiumSubtext
+                preset="fadeUp"
+                delay={0.3}
+                staggerDelay={0.03}
+                className="max-w-3xl mx-auto"
+              >
                 Real results from businesses that transformed their lead generation with our AI agents
-              </p>
+              </PremiumSubtext>
             </div>
             
             <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto auto-rows-fr">
@@ -257,11 +280,15 @@ export default function Home() {
         <section className="relative py-32">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <GradientText
-                text="What Our Clients Say"
-                preset="slide"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["Clients"]}
-              />
+                staggerDelay={0.05}
+                duration={0.6}
+              >
+                What Our Clients Say
+              </PremiumHeading>
             </div>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto auto-rows-fr">
@@ -293,11 +320,15 @@ export default function Home() {
         <section className="relative py-32">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <GradientText
-                text="Calculate Your ROI"
-                preset="scale"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["ROI"]}
-              />
+                staggerDelay={0.05}
+                duration={0.6}
+              >
+                Calculate Your ROI
+              </PremiumHeading>
             </div>
             
             <div className="max-w-4xl mx-auto">
@@ -310,11 +341,15 @@ export default function Home() {
         <section className="relative py-32">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-20">
-              <GradientText
-                text="Pricing Packages"
-                preset="scale"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["Pricing"]}
-              />
+                staggerDelay={0.05}
+                duration={0.6}
+              >
+                Pricing Packages
+              </PremiumHeading>
             </div>
             
             <div className="max-w-4xl mx-auto">
@@ -328,18 +363,25 @@ export default function Home() {
           
           <div className="container mx-auto px-4 text-center relative z-10">
             <div className="max-w-4xl mx-auto">
-              <GradientText
-                text="Ready to 10x Your Lead Generation?"
-                preset="scale"
+              <PremiumHeading
+                level={1}
+                preset="fadeUp"
                 highlightWords={["10x", "Lead", "Generation"]}
-              />
+                staggerDelay={0.05}
+                duration={0.6}
+                className="mb-8"
+              >
+                Ready to 10x Your Lead Generation?
+              </PremiumHeading>
               
-              <TextEffect
-                text="Book a strategy call to discover how our AI agents can fill your pipeline with qualified prospects in the next 30 days."
-                preset="fade"
-                className="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
-                delay={0.05}
-              />
+              <PremiumSubtext
+                preset="fadeUp"
+                delay={0.3}
+                staggerDelay={0.03}
+                className="max-w-3xl mx-auto md:text-lg lg:text-xl"
+              >
+                Book a strategy call to discover how our AI agents can fill your pipeline with qualified prospects in the next 30 days.
+              </PremiumSubtext>
               
               <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button variant="cta" size="lg" href="#contact" className="transform hover:scale-105 transition-transform duration-200">
@@ -460,7 +502,14 @@ function ServiceCard({
             {icon}
           </div>
           
-          <h3 className="text-xl md:text-2xl font-geist tracking-tighter text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
+          <PremiumTextAnimation
+            text={title}
+            preset="fadeUp"
+            size="xl"
+            staggerDelay={0.04}
+            duration={0.5}
+            className="mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"
+          />
           <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{description}</p>
           
           <ul className="space-y-3 mb-8">
@@ -508,7 +557,15 @@ function CaseStudyCard({
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
               <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">{industry}</span>
             </div>
-            <div className="text-2xl md:text-3xl font-geist tracking-tighter text-gradient-purple mb-2 group-hover:scale-105 transition-transform duration-300">{result}</div>
+            <PremiumTextAnimation
+              text={result}
+              preset="fadeUp"
+              size="xl"
+              gradient={true}
+              staggerDelay={0.05}
+              duration={0.5}
+              className="mb-2 group-hover:scale-105 transition-transform duration-300"
+            />
             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{timeframe}</div>
           </div>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">{description}</p>
@@ -557,7 +614,14 @@ function TestimonialCard({
                 {author.split(' ').map(n => n[0]).join('')}
               </div>
             </div>
-            <div className="text-lg font-geist tracking-tighter text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{author}</div>
+            <PremiumTextAnimation
+              text={author}
+              preset="fadeUp"
+              size="lg"
+              staggerDelay={0.05}
+              duration={0.5}
+              className="group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"
+            />
             <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{role}</div>
           </div>
         </div>
