@@ -99,11 +99,10 @@ export default function Home() {
 
         {/* Guarantee Section */}
         <section id="guarantee" className="relative py-32">
-          
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 mb-8">
-                <Shield className="h-10 w-10 text-white" />
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="mb-8 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent text-green-600 dark:text-green-400">
+                <Shield className="h-8 w-8" />
               </div>
               
               <GradientText
@@ -113,30 +112,46 @@ export default function Home() {
                 className="mb-8"
               />
               
-              <div className="relative">
-                <div className="relative bg-white/90 dark:bg-black/90 backdrop-blur-xl border border-green-200 dark:border-green-800 rounded-3xl p-12">
-                  <div className="text-6xl font-bold text-gradient-green mb-6 font-heading">
-                    10+
-                  </div>
-                  <h3 className="heading-lg text-gray-900 dark:text-white mb-4">
-                    Qualified Leads in 30 Days
-                  </h3>
-                  <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    If our AI agents don't deliver at least 10 qualified leads ready for your sales team within 30 days, we'll refund every penny. No questions asked.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 mt-12">
-                    <div className="flex items-center justify-center space-x-3">
-                      <CheckCircle className="h-6 w-6 text-green-500" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">Qualified Prospects</span>
+              <div className="group relative">
+                <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full">
+                  <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10b981_0%,#059669_50%,#10b981_100%)] opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+                  <div className="relative h-full w-full rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 p-12 transition-all duration-500 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80">
+                    <div className="text-6xl sm:text-7xl font-geist font-normal tracking-tight text-gradient-green mb-6 group-hover:scale-105 transition-transform duration-300">
+                      10+
                     </div>
-                    <div className="flex items-center justify-center space-x-3">
-                      <CheckCircle className="h-6 w-6 text-green-500" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">Booked Appointments</span>
+                                         <h3 className="text-4xl md:text-5xl lg:text-6xl font-geist tracking-tighter text-gray-900 dark:text-white mb-6">
+                       Qualified Leads in 30 Days
+                     </h3>
+                                         <p className="text-base md:text-lg lg:text-xl font-geist text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                       If our AI agents don't deliver at least 10 qualified leads ready for your sales team within 30 days, we'll refund every penny. No questions asked.
+                     </p>
+                    
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div className="flex flex-col items-center space-y-3 p-6 rounded-xl bg-green-50/50 dark:bg-green-950/20 border border-green-200/30 dark:border-green-700/30">
+                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                          <CheckCircle className="h-6 w-6 text-green-500" />
+                        </div>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium text-center">Qualified Prospects</span>
+                      </div>
+                      <div className="flex flex-col items-center space-y-3 p-6 rounded-xl bg-green-50/50 dark:bg-green-950/20 border border-green-200/30 dark:border-green-700/30">
+                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                          <CheckCircle className="h-6 w-6 text-green-500" />
+                        </div>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium text-center">Booked Appointments</span>
+                      </div>
+                      <div className="flex flex-col items-center space-y-3 p-6 rounded-xl bg-green-50/50 dark:bg-green-950/20 border border-green-200/30 dark:border-green-700/30">
+                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                          <CheckCircle className="h-6 w-6 text-green-500" />
+                        </div>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium text-center">Sales-Ready Leads</span>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-center space-x-3">
-                      <CheckCircle className="h-6 w-6 text-green-500" />
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">Sales-Ready Leads</span>
+                    
+                    <div className="mt-12 pt-8 border-t border-gray-200/50 dark:border-gray-700/50">
+                      <div className="flex items-center justify-center space-x-3 text-green-600 dark:text-green-400 font-medium">
+                        <Shield className="h-5 w-5" />
+                        <span>100% Money-Back Guarantee • No Questions Asked</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -374,7 +389,7 @@ export default function Home() {
               <div className="md:col-span-2">
                 <div className="flex items-center mb-6">
                   <Image src="/logo.png" alt="SAI AI Solutions" width={320} height={50} className="mr-3" />
-                  <span className="heading-xs text-gray-900 dark:text-white"></span>
+                  <span className="text-lg font-geist font-medium tracking-tighter text-gray-900 dark:text-white"></span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg mb-8">
                   We guarantee 10+ qualified leads in 30 days with our AI voice and chat agents, or your money back.
@@ -445,7 +460,7 @@ function ServiceCard({
             {icon}
           </div>
           
-          <h3 className="heading-sm text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
+          <h3 className="text-xl md:text-2xl font-geist tracking-tighter text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{description}</p>
           
           <ul className="space-y-3 mb-8">
@@ -493,7 +508,7 @@ function CaseStudyCard({
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
               <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">{industry}</span>
             </div>
-            <div className="text-3xl font-bold text-gradient-purple mb-2 font-heading group-hover:scale-105 transition-transform duration-300">{result}</div>
+            <div className="text-2xl md:text-3xl font-geist tracking-tighter text-gradient-purple mb-2 group-hover:scale-105 transition-transform duration-300">{result}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{timeframe}</div>
           </div>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">{description}</p>
@@ -542,7 +557,7 @@ function TestimonialCard({
                 {author.split(' ').map(n => n[0]).join('')}
               </div>
             </div>
-            <div className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{author}</div>
+            <div className="text-lg font-geist tracking-tighter text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{author}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{role}</div>
           </div>
         </div>

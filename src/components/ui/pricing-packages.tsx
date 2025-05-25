@@ -67,7 +67,7 @@ export function PricingPackages() {
         {packages.map((pkg, index) => (
           <div key={index} className={`relative ${pkg.popular ? 'lg:scale-105' : ''}`}>
             {pkg.popular && (
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                 <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-medium">
                   Most Popular
                 </div>
@@ -97,7 +97,7 @@ export function PricingPackages() {
                       {pkg.icon}
                     </div>
                     
-                    <h3 className="heading-sm text-gray-900 dark:text-white mb-2">{pkg.name}</h3>
+                    <h3 className="text-xl font-geist font-semibold tracking-tighter text-gray-900 dark:text-white mb-2">{pkg.name}</h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">{pkg.description}</p>
                     
                     <div className="mb-6">
@@ -121,14 +121,12 @@ export function PricingPackages() {
                   </ul>
 
                   {/* CTA Button */}
-                  <div className="mt-auto">
+                  <div className="mt-auto flex justify-center">
                     <Button 
-                      variant={pkg.popular ? "cta" : "outline"} 
+                      variant="cta" 
                       size="lg" 
                       href="#contact" 
-                      className={`w-full transform hover:scale-105 transition-transform duration-200 ${
-                        pkg.popular ? '' : 'border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/50'
-                      }`}
+                      className="w-full transform hover:scale-105 transition-transform duration-200 flex items-center justify-center"
                     >
                       {pkg.popular ? 'Get Started Now' : 'Choose This Plan'}
                     </Button>
@@ -151,7 +149,7 @@ export function PricingPackages() {
       {/* Additional Info */}
       <div className="mt-16 text-center">
         <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-white/30 dark:border-gray-700/30">
-          <h4 className="heading-sm text-gray-900 dark:text-white mb-4">All Plans Include</h4>
+                        <h4 className="text-xl font-geist font-semibold tracking-tighter text-gray-900 dark:text-white mb-4">All Plans Include</h4>
           <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600 dark:text-gray-300">
             <div className="flex items-center justify-center space-x-2">
               <CheckCircle className="h-4 w-4 text-green-500" />

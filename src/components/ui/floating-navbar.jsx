@@ -63,13 +63,13 @@ export const FloatingNav = ({
           className
         )}>
         {/* Enhanced navbar with gradient border effect */}
-        <div className="relative inline-block overflow-hidden rounded-full p-[1.5px]">
-          <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-60" />
-          <div className="relative flex items-center justify-center rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl px-6 py-3">
+        <div className="group relative inline-block overflow-hidden rounded-full p-[1.5px]">
+          <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+          <div className="relative flex items-center justify-center rounded-full bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 shadow-2xl px-6 py-3 transition-all duration-500 group-hover:bg-white/80 dark:group-hover:bg-gray-900/80">
             {/* Logo */}
-            <Link href="/" className="flex items-center mr-6">
-              <Image src="/logo.png" alt="SAI AI Solutions" width={150} height={50} className="mr-2" />
-              <span className="hidden sm:block text-sm font-semibold text-gray-900 dark:text-white font-heading"></span>
+            <Link href="/" className="flex items-center mr-6 group">
+              <Image src="/logo.png" alt="SAI AI Solutions" width={150} height={50} className="mr-2 group-hover:scale-105 transition-transform duration-300" />
+              <span className="hidden sm:block text-sm font-geist font-semibold text-gray-900 dark:text-white"></span>
             </Link>
             
             {/* Navigation Items */}
@@ -79,17 +79,17 @@ export const FloatingNav = ({
                   key={`link=${idx}`}
                   href={navItem.link}
                   className={cn(
-                    "relative flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                    "relative flex items-center justify-center px-4 py-2 rounded-full text-sm font-geist font-medium transition-all duration-300",
                     "text-gray-700 dark:text-gray-300",
-                    "hover:text-gray-900 dark:hover:text-white",
+                    "hover:text-purple-600 dark:hover:text-purple-400",
                     "group"
                   )}>
-                  <span className="block sm:hidden text-purple-600 dark:text-purple-400">{navItem.icon}</span>
-                  <span className="hidden sm:block">{navItem.name}</span>
+                  <span className="block sm:hidden text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">{navItem.icon}</span>
+                  <span className="hidden sm:block group-hover:scale-105 transition-transform duration-300">{navItem.name}</span>
                   
-                  {/* Hover effect indicator - perfectly centered */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-zinc-300/20 via-purple-400/20 to-transparent dark:from-zinc-300/10 dark:via-purple-400/15 opacity-0 group-hover:opacity-100 transition-all duration-200" />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  {/* Enhanced hover effect with glass morphism */}
+                  <div className="absolute inset-0 rounded-full bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm border border-white/20 dark:border-gray-600/20 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg" />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600/10 via-pink-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               ))}
             </div>

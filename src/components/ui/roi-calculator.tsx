@@ -13,13 +13,13 @@ export function ROICalculator() {
   });
 
   const [results, setResults] = useState({
-    currentRevenue: 0,
-    projectedRevenue: 0,
-    additionalRevenue: 0,
-    roi: 0
+    currentRevenue: 5000,
+    projectedRevenue: 20000,
+    additionalRevenue: 15000,
+    roi: 400
   });
 
-  const [showResults, setShowResults] = useState(false);
+  const [showResults, setShowResults] = useState(true);
 
   const calculateROI = () => {
     // Current monthly revenue
@@ -66,13 +66,13 @@ export function ROICalculator() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 mb-6">
-          <Calculator className="h-8 w-8 text-white" />
+        <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent text-green-600 dark:text-green-400">
+          <Calculator className="h-8 w-8" />
         </div>
-        <h3 className="heading-lg text-gray-900 dark:text-white mb-4">
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-geist tracking-tighter bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] mb-4">
           ROI Calculator
         </h3>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg lg:text-xl font-geist text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           See how much additional revenue our AI lead generation service could generate for your business
         </p>
       </div>
@@ -80,7 +80,7 @@ export function ROICalculator() {
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Input Section */}
         <div className="space-y-6">
-          <h4 className="heading-sm text-gray-900 dark:text-white mb-6">Your Business Metrics</h4>
+          <h4 className="text-2xl md:text-3xl font-geist tracking-tighter text-gray-900 dark:text-white mb-6">Your Business Metrics</h4>
           
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -102,28 +102,34 @@ export function ROICalculator() {
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Sales Closing Rate (%)
             </label>
-            <input
-              type="number"
-              value={inputs.closingRate}
-              onChange={(e) => handleInputChange('closingRate', e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="20"
-              min="0"
-              max="100"
-            />
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">%</span>
+              <input
+                type="number"
+                value={inputs.closingRate}
+                onChange={(e) => handleInputChange('closingRate', e.target.value)}
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                placeholder="20"
+                min="0"
+                max="100"
+              />
+            </div>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Current Qualified Leads per Month
             </label>
-            <input
-              type="number"
-              value={inputs.currentLeads}
-              onChange={(e) => handleInputChange('currentLeads', e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="5"
-            />
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 font-medium">#</span>
+              <input
+                type="number"
+                value={inputs.currentLeads}
+                onChange={(e) => handleInputChange('currentLeads', e.target.value)}
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                placeholder="5"
+              />
+            </div>
           </div>
 
           <div>
@@ -155,7 +161,7 @@ export function ROICalculator() {
 
         {/* Results Section */}
         <div className={`transition-all duration-500 ${showResults ? 'opacity-100' : 'opacity-50'}`}>
-          <h4 className="heading-sm text-gray-900 dark:text-white mb-6">Projected Results</h4>
+          <h4 className="text-2xl md:text-3xl font-geist tracking-tighter text-gray-900 dark:text-white mb-6">Projected Results</h4>
           
           <div className="space-y-6">
             <div className="relative">

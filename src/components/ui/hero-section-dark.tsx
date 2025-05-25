@@ -88,7 +88,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               {/* Main Heading with Visual Impact */}
               <div className="relative">
                 
-                <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-geist font-normal tracking-tight leading-[1.1] bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+                <h1 className="relative text-5xl md:text-6xl lg:text-7xl font-geist tracking-tight leading-[1.1] bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
                   Generate{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 dark:from-purple-400 dark:via-pink-400 dark:to-orange-400">
                     10+ Qualified
@@ -103,7 +103,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
               {/* Guarantee Statement */}
               <div className="relative">
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-geist font-normal tracking-tight bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-geist tracking-tight bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
                   Or get your money back{" "}
                   <span className="relative">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-400">
