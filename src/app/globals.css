@@ -281,6 +281,20 @@ h1, h2, h3, h4, h5, h6 {
   color: transparent;
 }
 
+.text-gradient-green {
+  background: linear-gradient(to right, #10b981, #059669);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient-green {
+  background: linear-gradient(to right, #34d399, #10b981);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 * {
   border-color: hsl(var(--border));
   outline-color: hsl(var(--ring) / 0.5);
