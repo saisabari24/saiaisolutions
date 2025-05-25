@@ -66,28 +66,35 @@ export default function Home() {
       <div className="relative z-10">
         <FloatingNav items={navItems} className="z-50" />
 
-        {/* Hero Section */}
-        <HeroSection
-          title="Generate 10+ Qualified Leads in 30 Days"
-          subtitle={{
-            regular: "Or get your ",
-            gradient: "money back guaranteed",
-          }}
-          description="Our AI voice and chat agents work 24/7 to qualify prospects, book appointments, and fill your sales pipeline with ready-to-close leads."
-          ctaText="Book Strategy Call"
-          ctaHref="#contact"
-          gridOptions={{
-            angle: 65,
-            opacity: 0.4,
-            cellSize: 50,
-            lightLineColor: "#4a4a4a",
-            darkLineColor: "#2a2a2a",
-          }}
-        />
-        
-        {/* Trusted By Section */}
-        <div className="relative z-10 py-16">
-          <Demo />
+        {/* Hero + Trusted By - Single Viewport Layout */}
+        <div className="min-h-screen flex flex-col pt-24">
+          {/* Hero Section - 75% of viewport */}
+          <div className="flex-[3]">
+            <HeroSection
+              title="Generate 10+ Qualified Leads in 30 Days"
+              subtitle={{
+                regular: "Or get your ",
+                gradient: "money back guaranteed",
+              }}
+              description="Our AI voice and chat agents work 24/7 to qualify prospects, book appointments, and fill your sales pipeline with ready-to-close leads."
+              ctaText="Book Strategy Call"
+              ctaHref="#contact"
+              gridOptions={{
+                angle: 65,
+                opacity: 0.4,
+                cellSize: 50,
+                lightLineColor: "#4a4a4a",
+                darkLineColor: "#2a2a2a",
+              }}
+            />
+          </div>
+          
+          {/* Trusted By Section - 25% of viewport */}
+          <div className="flex-1 relative z-10 flex items-center">
+            <div className="w-full">
+              <Demo />
+            </div>
+          </div>
         </div>
 
         {/* Guarantee Section */}
@@ -372,8 +379,8 @@ export default function Home() {
             <div className="grid gap-12 md:grid-cols-4">
               <div className="md:col-span-2">
                 <div className="flex items-center mb-6">
-                  <Image src="/logo.png" alt="SAI AI Solutions" width={64} height={45} className="mr-3" />
-                  <span className="heading-xs text-gray-900 dark:text-white">SAI AI Solutions</span>
+                  <Image src="/logo.png" alt="SAI AI Solutions" width={320} height={50} className="mr-3" />
+                  <span className="heading-xs text-gray-900 dark:text-white"></span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg mb-8">
                   We guarantee 10+ qualified leads in 30 days with our AI voice and chat agents, or your money back.

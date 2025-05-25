@@ -68,8 +68,8 @@ export const FloatingNav = ({
           <div className="relative flex items-center justify-center rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl px-6 py-3">
             {/* Logo */}
             <Link href="/" className="flex items-center mr-6">
-              <Image src="/logo.png" alt="SAI AI Solutions" width={48} height={34} className="mr-2" />
-              <span className="hidden sm:block text-sm font-semibold text-gray-900 dark:text-white font-heading">SAI AI</span>
+              <Image src="/logo.png" alt="SAI AI Solutions" width={150} height={50} className="mr-2" />
+              <span className="hidden sm:block text-sm font-semibold text-gray-900 dark:text-white font-heading"></span>
             </Link>
             
             {/* Navigation Items */}

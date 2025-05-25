@@ -59,13 +59,13 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   (
     {
       className,
-      title = "Build products for everyone",
+      title = "Generate 10+ Qualified Leads in 30 Days",
       subtitle = {
-        regular: "Designing your projects faster with ",
-        gradient: "the largest figma UI kit.",
+        regular: "Or get your money back ",
+        gradient: "guaranteed",
       },
-      description = "Sed ut perspiciatis unde omnis iste natus voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.",
-      ctaText = "Browse courses",
+      description = "Our AI voice and chat agents work 24/7 to qualify prospects, book appointments, and fill your sales pipeline with ready-to-close leads.",
+      ctaText = "Book Strategy Call",
       ctaHref = "#",
       gridOptions,
       ...props
@@ -75,21 +75,51 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
     return (
       <div className={cn("relative", className)} ref={ref} {...props}>
         <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 dark:bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
-        <section className="relative max-w-full mx-auto z-1">
+        <section className="relative max-w-full mx-auto z-1 h-full flex items-center">
           {/* <RetroGrid {...gridOptions} /> */}
-          <div className="max-w-screen-xl z-10 mx-auto px-4 py-28 gap-12 md:px-8">
-            <div className="space-y-5 max-w-3xl leading-0 lg:leading-5 mx-auto text-center">
-              <h1 className="text-sm text-gray-600 dark:text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/20 via-gray-400/20 to-transparent dark:from-zinc-300/5 dark:via-gray-400/5 border-[2px] border-black/5 dark:border-white/5 rounded-3xl w-fit">
-                {title}
-                <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-              </h1>
-              <h2 className="text-4xl tracking-tighter font-geist bg-clip-text text-transparent mx-auto md:text-6xl bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
-                {subtitle.regular}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
-                  {subtitle.gradient}
-                </span>
-              </h2>
-              <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
+                                <div className="max-w-screen-xl z-10 mx-auto px-4 py-8 gap-12 md:px-8 w-full">
+            <div className="space-y-4 md:space-y-6 max-w-5xl mx-auto text-center">
+              {/* Top Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200/20 bg-purple-50/10 dark:bg-purple-950/20 backdrop-blur-sm">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-geist text-gray-700 dark:text-gray-300">Sai AI Solutions</span>
+                <ChevronRight className="w-3 h-3 text-gray-500" />
+              </div>
+
+              {/* Main Heading with Visual Impact */}
+              <div className="relative">
+                {/* Background decoration */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-pink-600/10 blur-3xl"></div>
+                
+                <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-geist font-normal tracking-tight leading-[1.1] bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+                  Generate{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 dark:from-purple-400 dark:via-pink-400 dark:to-orange-400">
+                    10+ Qualified
+                  </span>
+                  <br />
+                  Leads in{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400">
+                    30 Days
+                  </span>
+                </h1>
+              </div>
+
+              {/* Guarantee Statement */}
+              <div className="relative">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-geist font-normal tracking-tight bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+                  Or get your money back{" "}
+                  <span className="relative">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-400">
+                      guaranteed
+                    </span>
+                    {/* Highlight effect */}
+                    <div className="absolute inset-0 bg-emerald-500/20 blur-lg rounded-lg -z-10"></div>
+                  </span>
+                </h2>
+              </div>
+
+              {/* Description */}
+              <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                 {description}
               </p>
               <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">

@@ -71,9 +71,9 @@ const logos = [
 export function Demo() {
   const { theme } = useTheme()
   return (
-    <div className="py-24 w-full overflow-hidden">
-      <div className="mx-auto w-full max-w-4xl">
-        <div className="text-center text-2xl text-foreground mb-8">
+    <div className="py-4 w-full overflow-hidden">
+      <div className="mx-auto w-full max-w-6xl">
+        <div className="text-center text-xl md:text-2xl text-foreground mb-6">
           <span className="text-indigo-900 dark:text-indigo-200 font-semibold block mb-1">
             Trusted by experts
           </span>
