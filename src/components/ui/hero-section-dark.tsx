@@ -106,7 +106,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               <div className="relative">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-geist tracking-tight leading-[1.2] bg-clip-text text-transparent bg-[linear-gradient(180deg,_#000_0%,_rgba(0,_0,_0,_0.75)_100%)] dark:bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] mb-8">
                   Or get your money back{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-300 dark:to-orange-200">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300">
                     guaranteed
                   </span>
                 </h2>

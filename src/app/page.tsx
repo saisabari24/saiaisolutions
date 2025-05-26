@@ -11,6 +11,7 @@ import { HeroSection } from "@/components/ui/hero-section-dark";
 import { ContactForm } from "@/components/ui/contact-form";
 import { ROICalculator } from "@/components/ui/roi-calculator";
 import { PricingPackages } from "@/components/ui/pricing-packages";
+
 import { 
   MessageSquare, 
   Phone, 
@@ -30,7 +31,11 @@ import {
   ArrowRight,
   Calendar,
   Clock,
-  Award
+  Calculator,
+  Award,
+  Twitter,
+  Instagram,
+  Linkedin
 } from "lucide-react";
 import Image from "next/image";
 
@@ -319,7 +324,10 @@ export default function Home() {
         {/* ROI Calculator */}
         <section className="relative py-32">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-20">
+            <div className="text-center mb-8">
+            <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent text-green-600 dark:text-green-400">
+          <Calculator className="h-8 w-8" />
+        </div>
               <PremiumHeading
                 level={1}
                 preset="fadeUp"
@@ -425,52 +433,77 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="relative border-t border-white/10 dark:border-white/5 py-20 bg-black/20 dark:bg-black/40 backdrop-blur-sm">
+        <footer className="relative border-t border-white/10 dark:border-white/5 py-12 bg-black/20 dark:bg-black/40 backdrop-blur-sm">
           <div className="container mx-auto px-4">
-            <div className="grid gap-12 md:grid-cols-4">
-              <div className="md:col-span-2">
-                <div className="flex items-center mb-6">
-                  <Image src="/logo.png" alt="SAI AI Solutions" width={320} height={50} className="mr-3" />
-                  <span className="text-lg font-geist font-medium tracking-tighter text-gray-900 dark:text-white"></span>
+            <div className="grid gap-8 lg:grid-cols-5 md:grid-cols-3">
+              {/* Company Info */}
+              <div className="lg:col-span-2 md:col-span-2">
+                <div className="flex items-center mb-4">
+                  <Image src="/logo.png" alt="SAI AI Solutions" width={320} height={50} />
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg mb-8">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg mb-6 text-sm">
                   We guarantee 10+ qualified leads in 30 days with our AI voice and chat agents, or your money back.
                 </p>
-                <div className="space-y-3">
+                
+                <div className="grid grid-cols-1 gap-3 mb-6">
                   <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-                    <span className="text-gray-700 dark:text-gray-300">hello@saiaisolutions.com</span>
+                    <Mail className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-gray-700 dark:text-gray-300 text-sm">hello@saiaisolutions.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-                    <span className="text-gray-700 dark:text-gray-300">+1 (888) 123-4567</span>
+                    <Phone className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                    <span className="text-gray-700 dark:text-gray-300 text-sm">+1 (888) 123-4567</span>
                   </div>
                 </div>
               </div>
               
+              {/* Services */}
               <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Services</h4>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">AI Voice Agents</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">AI Chat Agents</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">AI Social Media</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">AI Advertising</a></li>
+                <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Services</h4>
+                <ul className="space-y-2">
+                  <li><a href="#services" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">AI Voice Agents</a></li>
+                  <li><a href="#services" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">AI Chat Agents</a></li>
+                  <li><a href="#services" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">AI Social Media</a></li>
+                  <li><a href="#services" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">AI Advertising</a></li>
                 </ul>
               </div>
               
+              {/* Company */}
               <div>
-                <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Company</h4>
-                <ul className="space-y-3">
-                  <li><a href="#guarantee" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Our Guarantee</a></li>
-                  <li><a href="#case-studies" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Case Studies</a></li>
-                  <li><a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Contact Us</a></li>
-                  <li><a href="#" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Book a Call</a></li>
+                <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Company</h4>
+                <ul className="space-y-2">
+                  <li><a href="#guarantee" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">Our Guarantee</a></li>
+                  <li><a href="#case-studies" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">Case Studies</a></li>
+                  <li><a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">Contact Us</a></li>
+                  <li><a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 text-sm">Book a Call</a></li>
                 </ul>
+              </div>
+              
+              {/* Social Media */}
+              <div>
+                <h4 className="mb-4 text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white font-heading">Follow Us</h4>
+                <div className="flex space-x-3">
+                  <SocialLink
+                    href="https://twitter.com/saiaisolutions"
+                    icon={<Twitter className="h-4 w-4" />}
+                    label="Twitter"
+                  />
+                  <SocialLink
+                    href="https://instagram.com/saiaisolutions"
+                    icon={<Instagram className="h-4 w-4" />}
+                    label="Instagram"
+                  />
+                  <SocialLink
+                    href="https://www.linkedin.com/company/saiai-solutions"
+                    icon={<Linkedin className="h-4 w-4" />}
+                    label="LinkedIn"
+                  />
+                </div>
               </div>
             </div>
             
-            <div className="mt-16 pt-8 border-t border-white/10 dark:border-white/5 text-center">
-              <p className="text-gray-600 dark:text-gray-300">
+            <div className="mt-8 pt-6 border-t border-white/10 dark:border-white/5 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-xs">
                 © {new Date().getFullYear()} SAI AI Solutions. All rights reserved. • 10+ Leads Guaranteed or Money Back
               </p>
             </div>
@@ -498,18 +531,13 @@ function ServiceCard({
       <div className="relative inline-block overflow-hidden rounded-2xl p-[1.5px] w-full h-full">
         <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
         <div className="relative h-full w-full rounded-2xl bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 p-8 transition-all duration-500 group-hover:shadow-2xl group-hover:bg-white/80 dark:group-hover:bg-gray-900/80 flex flex-col">
-          <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600/20 via-pink-500/20 to-transparent dark:from-purple-400/20 dark:via-pink-400/20 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
+          <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent dark:from-green-400/20 dark:via-emerald-400/20 text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
             {icon}
           </div>
           
-          <PremiumTextAnimation
-            text={title}
-            preset="fadeUp"
-            size="xl"
-            staggerDelay={0.04}
-            duration={0.5}
-            className="mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300"
-          />
+          <h3 className="text-xl font-geist font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300 group-hover:scale-105 transition-transform duration-300">
+            {title}
+          </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">{description}</p>
           
           <ul className="space-y-3 mb-8">
@@ -557,15 +585,9 @@ function CaseStudyCard({
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
               <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">{industry}</span>
             </div>
-            <PremiumTextAnimation
-              text={result}
-              preset="fadeUp"
-              size="xl"
-              gradient={true}
-              staggerDelay={0.05}
-              duration={0.5}
-              className="mb-2 group-hover:scale-105 transition-transform duration-300"
-            />
+            <h3 className="text-2xl md:text-3xl font-geist font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-400 dark:to-pink-400 group-hover:scale-105 transition-transform duration-300">
+              {result}
+            </h3>
             <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{timeframe}</div>
           </div>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed flex-grow">{description}</p>
@@ -643,5 +665,35 @@ function TrustBadge({
       {icon}
       <span className="text-sm text-gray-700 dark:text-gray-300">{text}</span>
     </div>
+  );
+}
+
+// Social Link Component
+function SocialLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative"
+      aria-label={label}
+    >
+      <div className="relative inline-block overflow-hidden rounded-lg p-[1px]">
+        <div className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+        <div className="relative w-10 h-10 rounded-lg bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/30 dark:border-gray-700/30 flex items-center justify-center transition-all duration-300 group-hover:shadow-lg group-hover:bg-white/80 dark:group-hover:bg-gray-900/80 group-hover:scale-110">
+          <div className="text-purple-600 dark:text-purple-400 group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">
+            {icon}
+          </div>
+        </div>
+      </div>
+    </a>
   );
 } 

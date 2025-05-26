@@ -67,18 +67,6 @@ export function ROICalculator() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-12">
-        <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-green-600/20 via-emerald-500/20 to-transparent text-green-600 dark:text-green-400">
-          <Calculator className="h-8 w-8" />
-        </div>
-        <PremiumTextAnimation
-          text="ROI Calculator"
-          preset="fadeUp"
-          size="2xl"
-          highlightWords={["ROI"]}
-          staggerDelay={0.05}
-          duration={0.6}
-          className="mb-4"
-        />
         <PremiumSubtext
           preset="fadeUp"
           delay={0.3}
