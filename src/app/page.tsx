@@ -352,17 +352,15 @@ export default function Home() {
               <PremiumHeading
                 level={1}
                 preset="fadeUp"
-                highlightWords={["Pricing"]}
+                highlightWords={["Investment"]}
                 staggerDelay={0.05}
                 duration={0.6}
               >
-                Pricing Packages
+                Investment Plans
               </PremiumHeading>
             </div>
             
-            <div className="max-w-4xl mx-auto">
-              <PricingPackages />
-            </div>
+            <PricingPackages />
           </div>
         </section>
 
@@ -374,12 +372,12 @@ export default function Home() {
               <PremiumHeading
                 level={1}
                 preset="fadeUp"
-                highlightWords={["10x", "Lead", "Generation"]}
+                highlightWords={["Transform", "Revenue"]}
                 staggerDelay={0.05}
                 duration={0.6}
                 className="mb-8"
               >
-                Ready to 10x Your Lead Generation?
+                Ready to Transform Your Revenue Pipeline?
               </PremiumHeading>
               
               <PremiumSubtext
@@ -388,17 +386,17 @@ export default function Home() {
                 staggerDelay={0.03}
                 className="max-w-3xl mx-auto md:text-lg lg:text-xl"
               >
-                Book a strategy call to discover how our AI agents can fill your pipeline with qualified prospects in the next 30 days.
+                Schedule a strategic consultation to discover how our AI agents can accelerate your revenue growth and deliver qualified prospects within 30 days.
               </PremiumSubtext>
               
               <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Button variant="cta" size="lg" href="#contact" className="transform hover:scale-105 transition-transform duration-200">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Book Strategy Call
+                  Schedule Consultation
                 </Button>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
                   <Clock className="mr-2 h-4 w-4" />
-                  <span className="text-sm">Free 30-minute consultation</span>
+                  <span className="text-sm">Complimentary 30-minute strategic session</span>
                 </div>
               </div>
             </div>

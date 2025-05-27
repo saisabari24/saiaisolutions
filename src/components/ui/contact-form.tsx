@@ -67,10 +67,10 @@ export function ContactForm() {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <PremiumTextAnimation
-          text="Book Your Strategy Call"
+          text="Schedule Strategic Consultation"
           preset="fadeUp"
           size="2xl"
-          highlightWords={["Strategy", "Call"]}
+          highlightWords={["Strategic", "Consultation"]}
           staggerDelay={0.05}
           duration={0.6}
           className="mb-4"
@@ -81,7 +81,7 @@ export function ContactForm() {
           staggerDelay={0.03}
           className="text-xl"
         >
-          Get a free consultation and discover how we can generate 10+ qualified leads for your business in 30 days.
+          Discover how our AI solutions can accelerate your revenue growth and deliver qualified prospects within 30 days.
         </PremiumSubtext>
       </div>
 
@@ -252,12 +252,12 @@ export function ContactForm() {
           className="w-full transform hover:scale-105 transition-transform duration-200"
         >
           <Calendar className="mr-2 h-5 w-5" />
-          Book My Strategy Call
+          Schedule Consultation
           <Send className="ml-2 h-5 w-5" />
         </Button>
 
         <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>Free consultation • No obligation • Response within 24 hours</p>
+          <p>Complimentary consultation • No obligation • Response within 24 hours</p>
         </div>
       </form>
     </div>
