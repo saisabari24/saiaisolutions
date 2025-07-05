@@ -37,7 +37,7 @@ import {
   Instagram,
   Linkedin
 } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
 
 const navItems = [
   { name: "Home", link: "/", icon: <HomeIcon size={20} /> },
@@ -55,7 +55,8 @@ export default function Home() {
           src="/Syntone2024.jpg"
           alt="Premium AI Background"
           className="w-full h-full object-cover"
-          draggable={false}
+          draggable="false"
+          style={{ display: 'block' }}
         />
       </div>
       <SplashCursor 
@@ -437,7 +438,7 @@ export default function Home() {
               {/* Company Info */}
               <div className="lg:col-span-2 md:col-span-2">
                 <div className="flex items-center mb-4">
-                  <Image src="/logo.png" alt="SAI AI Solutions" width={320} height={50} />
+                  <img src="/logo.png" alt="SAI AI Solutions" width="150" height="50" className="mr-2" style={{ display: 'inline-block' }} />
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg mb-6 text-sm">
                   We guarantee 10+ qualified leads in 30 days with our AI voice and chat agents, or your money back.
