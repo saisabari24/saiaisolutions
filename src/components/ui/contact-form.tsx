@@ -64,202 +64,42 @@ export function ContactForm() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <PremiumTextAnimation
-          text="Schedule Strategic Consultation"
-          preset="fadeUp"
-          size="2xl"
-          highlightWords={["Strategic", "Consultation"]}
-          staggerDelay={0.05}
-          duration={0.6}
-          className="mb-4"
-        />
-        <PremiumSubtext
-          preset="fadeUp"
-          delay={0.3}
-          staggerDelay={0.03}
-          className="text-xl"
-        >
-          Discover how our AI solutions can accelerate your revenue growth and deliver qualified prospects within 30 days.
-        </PremiumSubtext>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Full Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="John Smith"
+    <div className="w-full flex justify-center px-2">
+      <div className="my-16 w-full max-w-5xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-2xl rounded-2xl shadow-xl p-0 flex flex-col items-center overflow-hidden">
+        <div className="w-full px-8 pt-8 pb-4">
+          <div className="px-2">
+            <PremiumTextAnimation
+              text="Book Your AI Strategy Consultation"
+              preset="fadeUp"
+              size="3xl"
+              highlightWords={["AI Strategy Consultation"]}
+              gradient={true}
+              staggerDelay={0.05}
+              duration={0.6}
+              className="mb-4 text-center"
             />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Email Address *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="john@company.com"
-            />
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Phone Number *
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="+1 (555) 123-4567"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Company Name *
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              required
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-              placeholder="Acme Inc."
-            />
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Primary Interest *
-            </label>
-            <select
-              id="service"
-              name="service"
-              required
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+            <PremiumSubtext
+              preset="fadeUp"
+              delay={0.3}
+              staggerDelay={0.03}
+              className="text-lg text-center mb-4"
             >
-              <option value="">Select a service</option>
-              <option value="ai-voice-agents">AI Voice Agents</option>
-              <option value="ai-chat-agents">AI Chat Agents</option>
-              <option value="ai-social-media">AI Social Media Management</option>
-              <option value="ai-ads">AI-Optimized Advertising</option>
-              <option value="full-package">Complete Lead Generation Package</option>
-            </select>
-          </div>
-          
-          <div>
-            <label htmlFor="revenue" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Annual Revenue
-            </label>
-            <select
-              id="revenue"
-              name="revenue"
-              value={formData.revenue}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-            >
-              <option value="">Select range</option>
-              <option value="under-500k">Under $500K</option>
-              <option value="500k-1m">$500K - $1M</option>
-              <option value="1m-5m">$1M - $5M</option>
-              <option value="5m-10m">$5M - $10M</option>
-              <option value="over-10m">Over $10M</option>
-            </select>
+              Instantly schedule a meeting with our team to discover how SAI AI Solutions can accelerate your revenue growth and deliver qualified leads within 30 days.
+            </PremiumSubtext>
           </div>
         </div>
-
-        <div>
-          <label htmlFor="urgency" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Timeline *
-          </label>
-          <select
-            id="urgency"
-            name="urgency"
-            required
-            value={formData.urgency}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
-          >
-            <option value="">When do you want to start?</option>
-            <option value="asap">ASAP - Ready to start immediately</option>
-            <option value="this-month">Within this month</option>
-            <option value="next-month">Next month</option>
-            <option value="quarter">Within next quarter</option>
-            <option value="exploring">Just exploring options</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Tell us about your current lead generation challenges
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none"
-            placeholder="Tell us about your business goals, current lead generation efforts, and what you'd like to achieve..."
+        <div className="w-full flex-1 min-h-[600px]">
+          <iframe
+            src="https://cal.com/saiaisolutions/ai-strategy-consultation"
+            width="100%"
+            height="100%"
+            className="w-full min-h-[600px] h-[70vh] border-0 rounded-b-2xl"
+            title="Book a meeting with SAI AI Solutions"
+            allow="camera; microphone; fullscreen; speaker"
+            style={{ display: 'block' }}
           />
         </div>
-
-        <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-xl p-6 border border-green-200/50 dark:border-green-700/50">
-          <div className="flex items-start space-x-3">
-            <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-            <div>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Our Guarantee</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                We guarantee 10+ qualified leads in 30 days or your money back. No contracts, no setup fees, just results.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <Button
-          type="submit"
-          variant="cta"
-          size="lg"
-          className="w-full transform hover:scale-105 transition-transform duration-200"
-        >
-          <Calendar className="mr-2 h-5 w-5" />
-          Schedule Consultation
-          <Send className="ml-2 h-5 w-5" />
-        </Button>
-
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>Complimentary consultation • No obligation • Response within 24 hours</p>
-        </div>
-      </form>
+      </div>
     </div>
   );
 } 
