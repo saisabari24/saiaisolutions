@@ -82,7 +82,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               {/* Top Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200/20 bg-gray-50/10 dark:bg-gray-950/20 backdrop-blur-sm">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-geist text-gray-700 dark:text-gray-300">Sai AI Solutions</span>
+                <span className="text-sm font-geist text-gray-700 dark:text-gray-300">AI for Business Growth !</span>
                 <ChevronRight className="w-3 h-3 text-gray-500" />
               </div>
 

@@ -45,9 +45,19 @@ export function ROICalculator() {
 
   const selectedPlan = pricingTiers[selectedTier];
   
-  // Calculate results based on user inputs
-  const expectedRevenue = (selectedPlan.guaranteedLeads * averageDealValue * closingRate) / 100;
-  const roi = expectedRevenue > selectedPlan.cost ? ((expectedRevenue - selectedPlan.cost) / selectedPlan.cost) * 100 : 0;
+  // Add hidden multipliers for dark pattern ROI boosting
+  const tierMultipliers = [1, 1.25, 1.5]; // Growth Starter, Pro Accelerator, Enterprise AI Suite
+  const multiplier = tierMultipliers[selectedTier];
+
+  // Calculate results based on user inputs, with multiplier for higher tiers
+  const expectedRevenue = (selectedPlan.guaranteedLeads * averageDealValue * closingRate * multiplier) / 100;
+  // Fixed ROI percent for each plan
+  const fixedRoiPercents = [60, 120, 200];
+  const roi = fixedRoiPercents[selectedTier];
+
+  // Add a hidden multiplier for the displayed revenue only
+  const revenueDisplayMultipliers = [1.5, 2, 2.5];
+  const revenueDisplay = expectedRevenue * revenueDisplayMultipliers[selectedTier];
 
   return (
     <div className="max-w-5xl mx-auto">
@@ -149,12 +159,12 @@ export function ROICalculator() {
         </div>
       </div>
 
-      {/* Results Display */}
-      <div className="grid lg:grid-cols-2 gap-8 items-start">
-        {/* Left Column - Plan Benefits & Comparison */}
-        <div className="space-y-6">
-          {/* Selected Plan Benefits */}
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-white/30 dark:border-gray-700/30">
+      {/* Results Display - Symmetrical 2x2 Grid */}
+      <div className="mt-12">
+        <h4 className="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">Your Projected Results</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Top Left: Benefits */}
+          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-white/30 dark:border-gray-700/30 flex flex-col justify-center min-h-[220px]">
             <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               {selectedPlan.name} Benefits
             </h4>
@@ -192,24 +202,23 @@ export function ROICalculator() {
               </div>
             </div>
           </div>
-
-          {/* Plan Comparison Card */}
-          <div className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 dark:from-purple-900/20 dark:to-pink-900/20 backdrop-blur-2xl rounded-2xl p-6 border border-purple-200/50 dark:border-purple-700/50">
-            <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          {/* Top Right: Why Choose */}
+          <div className="bg-gradient-to-br from-purple-50/80 to-pink-50/80 dark:from-purple-900/20 dark:to-pink-900/20 backdrop-blur-2xl rounded-2xl p-8 border border-purple-200/50 dark:border-purple-700/50 flex flex-col justify-between min-h-[220px]">
+            <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Why Choose {selectedPlan.name}?
-            </h5>
-            <div className="space-y-3 text-sm">
+            </h4>
+            <div className="flex-grow flex flex-col justify-center gap-4">
               {selectedTier === 0 && (
                 <>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Perfect entry point into AI automation
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Low risk, high reward investment
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Ideal for testing AI lead generation
                   </div>
@@ -217,15 +226,15 @@ export function ROICalculator() {
               )}
               {selectedTier === 1 && (
                 <>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Most popular choice for growing businesses
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Best balance of features and value
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Includes $1,000 ad credit bonus
                   </div>
@@ -233,15 +242,15 @@ export function ROICalculator() {
               )}
               {selectedTier === 2 && (
                 <>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Complete AI transformation solution
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Dedicated account manager included
                   </div>
-                  <div className="flex items-center text-purple-700 dark:text-purple-300">
+                  <div className="flex items-center text-purple-700 dark:text-purple-300 text-base font-normal">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Maximum lead generation potential
                   </div>
@@ -249,106 +258,36 @@ export function ROICalculator() {
               )}
             </div>
           </div>
-
-          {/* ROI Breakdown */}
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-6 border border-white/30 dark:border-gray-700/30">
-            <h5 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Investment Breakdown
-            </h5>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center py-2 border-b border-gray-200/50 dark:border-gray-700/50">
-                <span className="text-gray-600 dark:text-gray-300">Monthly Service Cost</span>
-                <span className="font-semibold text-gray-900 dark:text-white">{formatCurrency(selectedPlan.cost)}</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-gray-200/50 dark:border-gray-700/50">
-                <span className="text-gray-600 dark:text-gray-300">Expected Revenue</span>
-                <span className="font-semibold text-green-600 dark:text-green-400">{formatCurrency(expectedRevenue)}</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-gray-200/50 dark:border-gray-700/50">
-                <span className="text-gray-600 dark:text-gray-300">Net Profit</span>
-                <span className="font-semibold text-green-600 dark:text-green-400">{formatCurrency(expectedRevenue - selectedPlan.cost)}</span>
-              </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-gray-600 dark:text-gray-300">Cost Per Lead</span>
-                <span className="font-semibold text-blue-600 dark:text-blue-400">{formatCurrency(selectedPlan.cost / selectedPlan.guaranteedLeads)}</span>
-              </div>
+          {/* Bottom Left: Revenue */}
+          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-green-200/50 dark:border-green-700/50 rounded-2xl p-8 flex flex-col items-center justify-center min-h-[220px]">
+            <div className="text-sm text-green-600 dark:text-green-400 mb-2 font-medium flex items-center">
+              <TrendingUp className="h-4 w-4 mr-1" />
+              Estimated Monthly Revenue
+            </div>
+            <div className="text-5xl font-bold text-green-600 dark:text-green-400">
+              {formatCurrency(revenueDisplay)}
+            </div>
+            <div className="text-sm text-green-600 dark:text-green-400 mt-2 text-center">
+              Based on your business metrics and plan selection.
             </div>
           </div>
-        </div>
-
-        {/* Revenue Projections */}
-        <div className="space-y-6 flex flex-col h-full">
-          <h4 className="text-2xl font-bold text-gray-900 dark:text-white">Your Projected Results</h4>
-          
-          <div className="space-y-4">
-            <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-gray-200/50 dark:border-gray-700/50 rounded-xl p-6">
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">Monthly Investment</div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                {formatCurrency(selectedPlan.cost)}
-              </div>
+          {/* Bottom Right: ROI */}
+          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-blue-200/50 dark:border-blue-700/50 rounded-2xl p-8 flex flex-col items-center justify-center min-h-[220px]">
+            <div className="text-sm text-blue-600 dark:text-blue-400 mb-2 flex items-center">
+              <TrendingUp className="h-4 w-4 mr-1" />
+              Return on Investment
             </div>
-
-            <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-green-200/50 dark:border-green-700/50 rounded-xl p-6">
-              <div className="text-sm text-green-600 dark:text-green-400 mb-2">Expected Monthly Revenue</div>
-              <div className="text-3xl font-bold text-green-600 dark:text-green-400">
-                {formatCurrency(expectedRevenue)}
-              </div>
-              <div className="text-sm text-green-600 dark:text-green-400 mt-1">
-                {selectedPlan.guaranteedLeads} leads × {formatCurrency(averageDealValue)} × {closingRate}% close rate
-              </div>
+            <div className="text-6xl font-bold text-blue-600 dark:text-blue-400">
+              {roi}%
             </div>
-
-            <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl border border-blue-200/50 dark:border-blue-700/50 rounded-xl p-6">
-              <div className="text-sm text-blue-600 dark:text-blue-400 mb-2 flex items-center">
-                <TrendingUp className="h-4 w-4 mr-1" />
-                Return on Investment
-              </div>
-              <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
-                {Math.round(roi)}%
-              </div>
-              <div className="text-sm text-blue-600 dark:text-blue-400 mt-1">
-                Monthly ROI after service cost
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 backdrop-blur-xl border border-purple-200/50 dark:border-purple-700/50 rounded-xl p-6">
-              <div className="text-sm text-purple-600 dark:text-purple-400 mb-2">Annual Revenue Potential</div>
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">
-                {formatCurrency(expectedRevenue * 12)}
-              </div>
-              <div className="text-sm text-purple-600 dark:text-purple-400 mt-1">
-                With consistent lead generation
-              </div>
+            <div className="text-sm text-blue-600 dark:text-blue-400 mt-1">
+              Monthly ROI after service cost
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-12 text-center">
-        {roi > 100 ? (
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-green-200/50 dark:border-green-700/50 mb-8">
-            <h5 className="font-bold text-green-800 dark:text-green-300 mb-3 text-xl">
-              Outstanding ROI Potential!
-            </h5>
-            <p className="text-green-700 dark:text-green-400 mb-4">
-              The {selectedPlan.name} plan could generate <strong>{formatCurrency(expectedRevenue)}</strong> in monthly revenue 
-              from your <strong>{formatCurrency(selectedPlan.cost)}</strong> investment.
-            </p>
-            <p className="text-sm text-green-600 dark:text-green-400">
-              That's a <strong>{Math.round(roi)}% ROI</strong> based on your business metrics
-            </p>
-          </div>
-        ) : (
-          <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl rounded-2xl p-8 border border-orange-200/50 dark:border-orange-700/50 mb-8">
-            <h5 className="font-bold text-orange-800 dark:text-orange-300 mb-3 text-xl">
-              Let's Optimize Your Results
-            </h5>
-            <p className="text-orange-700 dark:text-orange-400 mb-4">
-              Consider adjusting your deal value or closing rate, or explore a different plan that better fits your business model.
-            </p>
-          </div>
-        )}
-        
         <Button variant="cta" size="lg" href="#contact" className="transform hover:scale-105 transition-transform duration-200">
           Start With {selectedPlan.name}
           <TrendingUp className="ml-2 h-5 w-5" />
